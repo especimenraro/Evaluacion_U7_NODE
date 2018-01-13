@@ -25,12 +25,12 @@ console.log("Servidor Ejecutandose en puerto: " +PORT)
 const url = 'mongodb://localhost:27017/schedule';
 
 mongoose.connect(url);
-/*
+
 operaciones.insertarRegistro((error,result) => {
 	if (error) console.log(error)
 	console.log(result)
 }) 
 
-*/
+
 
 

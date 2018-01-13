@@ -26,6 +26,8 @@ const url = 'mongodb://localhost:27017/schedule';
 
 mongoose.connect(url);
 
+// CREA TRES USUARIOS
+
 operaciones.insertarRegistro((error,result) => {
 	if (error) console.log(error)
 	console.log(result)
