@@ -11,7 +11,7 @@ class EventManager {
     obtenerDataInicial() {
         let url = this.urlBase + "/all"
         var usuario = sessionStorage.getItem('usuario')
-        console.log(usuario)
+        
         $.post(url,{usuario: usuario},(response) => {
             this.inicializarCalendario(response)
         })

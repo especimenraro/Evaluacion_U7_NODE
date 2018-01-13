@@ -27,20 +27,20 @@ class EventManager {
 		var usuario = sessionStorage.getItem('usuario')
 		let url = this.urlBase + "/actualiza"
 		if (evento.end == null) {
-		let ev = {
-			id: evento._id,
-			title: evento.title,
-			start: evento.start._d,
-			end:'',
-			usuario: usuario		
+		var ev = {
+						id: evento._id,
+						title: evento.title,
+						start: evento.start._d,
+						end:'',
+						usuario: usuario		
 		}
 		} else {
-			let ev = {
-			id: evento._id,
-			title: evento.title,
-			start: evento.start._d,
-			end: evento.end._d,
-			usuario: usuario		
+			var ev = {
+							id: evento._id,
+							title: evento.title,
+							start: evento.start._d,
+							end: evento.end._d,
+							usuario: usuario		
 		}
 		}
         $.post(url, ev, (response) => {
