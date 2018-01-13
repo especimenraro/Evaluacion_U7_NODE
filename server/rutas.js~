@@ -96,6 +96,7 @@ Router.post('/actualiza', function (req,res) {
 			start = req.body.start,
 			end = req.body.end,
 			usuario = req.body.usuario
+			console.log(end,usuario)
 	agendaModel.replaceOne({_id:id},{title: title, start: start, end: end, usuario: usuario},function (error,result) {
 		if (error) {
 			res.status(500)

@@ -16,14 +16,13 @@ Router.post('/all', function (req,res) {
 		res.status(500)
 		res.json(error)	
 	}
-	console.log(result)
 	res.json(result)
 }) // FIN FIND
 }) // FIN ROUTER GET
 
 // VALIDA USUARIO
 Router.post('/login', function (req,res) {
-	console.log(req.body.user)
+	
 	usuario = req.body.user
 	pass = req.body.pass
 	userModel.findOne({email: usuario}).exec(function (error, result) {
@@ -31,7 +30,7 @@ Router.post('/login', function (req,res) {
 			res.status(500)
 			res.json(error)
 			}
-			console.log(result)	
+			
 			if (result) {
 				if (result.pass == pass) {
 				res.send("Validado")
@@ -77,7 +76,7 @@ Router.post('/new', function (req,res) {
 //ELIMINA EVENTO
 Router.post('/delete/', function (req,res) {
 	let eventId = req.body._id
-	console.log(eventId)
+
 	agendaModel.remove({_id: eventId}, function (error,result) {
 		
 		if (error) {
@@ -96,7 +95,7 @@ Router.post('/actualiza', function (req,res) {
 			start = req.body.start,
 			end = req.body.end,
 			usuario = req.body.usuario
-			console.log(end,usuario)
+			
 	agendaModel.replaceOne({_id:id},{title: title, start: start, end: end, usuario: usuario},function (error,result) {
 		if (error) {
 			res.status(500)
